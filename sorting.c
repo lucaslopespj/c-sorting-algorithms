@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "fileHandling.h"
 
 /* Insertion Sort Algorithm */
 void insertionSort(int *v, int n) {
@@ -34,20 +35,26 @@ void selectionSort(int *v, int n) {
 }
 
 int main() {
-    int v[6] = {5, 3, -1, 0, 4, 10};
-    int i;
+    int v[10] = {5, 3, -1, 0, 4, 10, -35, 150, 2, 7};
+    int i = 0, tam = 10;
 
     printf("Original vector: ");
-    for (i = 0; i < 6; i++)
+    for (i = 0; i < tam; i++)
         printf("%d ", v[i]);
 
     printf("\nSorted vector: ");
-    /*insertionSort(v, 6);*/
+    insertionSort(v, 6);
     selectionSort(v, 6);
 
-    for (i = 0; i < 6; i++)
+    for (i = 0; i < tam; i++)
         printf("%d ", v[i]);
 
-    printf("\n");
+    for (i = 0; i < tam; i++) {
+        if (i < tam-1)
+            printf("%d, ", v[i]);
+        else
+            printf("%d\n", v[i]);
+    }       
+
     return 0;
 }

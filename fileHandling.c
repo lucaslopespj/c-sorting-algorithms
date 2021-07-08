@@ -6,8 +6,9 @@ int main() {
     /*int v[6] = {5, 3, -1, 0, 4, 10};*/
     int tam = 15;
     int v[15];
-    int num[100];
+    int num = 0;
     int i = 0;
+    int neg = 0;
     int digits = 1;
     char ch = 0;
     FILE *fs = NULL;
@@ -19,29 +20,41 @@ int main() {
         return -1;
     }
 
-    while (ch != EOF) {
+    while (1) {
         ch = getc(fs);
-        printf("%d\n", ch);
-        if (ch != ',' && ch != ' ') {
-            if (ch == '-') {
-                ch = getc(fs);
-                v[i++] = -atoi(&ch);
-            }
-            else {
-                while (1) {
-                    ch = getc(fs);
-                    v[i++] = atoi(&ch);
+
+        switch (ch) {
+            case '-':
+                neg = 1;
+                break;
+            
+            case ',':
+                if (neg) {
+                    num = -num;
+                    neg = 0;
                 }
-            }
+                v[i++] = num;
+                num = 0;
+                break;
+        
+            default:
+                if (ch != ' ') {
+                    num *= 10;
+                    num += atoi(&ch);
+                }
         }
+
+        if (ch == EOF)
+            break;
     }
 
     fclose(fs);
 
-    /*printf("Original vector: ");
+    printf("Original vector: ");
     for (i = 0; i < tam; i++)
         printf("%d ", v[i]);
 
+    /*
     printf("\nSorted vector: ");
     insertionSort(v, 6);
     selectionSort(v, 6);

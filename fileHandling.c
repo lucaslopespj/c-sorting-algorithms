@@ -38,10 +38,13 @@ int main() {
                 break;
         
             default:
-                if (ch != ' ') {
+                if (ch != ' ' && ch != EOF) {
                     num *= 10;
                     num += atoi(&ch);
                 }
+                
+                if (ch == EOF)
+                    v[i] = num;
         }
 
         if (ch == EOF)

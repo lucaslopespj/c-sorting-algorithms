@@ -1,6 +1,35 @@
 /* Code in this library is to help read and write data in files */
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+
+
+int randNum(int digits) {
+    struct timespec ts;
+
+    timespec_get(&ts, 1);
+    srand(ts.tv_nsec);
+
+    switch (digits) {
+        case 1:
+            return rand() % 9;
+        
+        case 2:
+            return rand() % 99;
+        
+        case 3:
+            return rand() % 999;
+        
+        case 4:
+            return rand() % 9999;
+        
+        case 5:
+            return rand() % 99999;        
+        
+        default:
+            return rand() % 100;
+    }
+}
 
 int readNumFromFile(int **v, const char *fileName) {
     int i = 0, t = 0, neg = 0, num = 0;
@@ -102,7 +131,7 @@ int main() {
                 }
                 
                 else if (ch == EOF) {
-                    v[i] = num;
+                    v[i] = /num;
                     vet[i] = num;
                 }
         }
@@ -115,7 +144,10 @@ int main() {
     int *vet = NULL;
     int t, i;
     const char *file = "input.txt";
-    printf("%s\n", file);
+
+    for (i = 0; i < 5000; i++)
+        printf("%d, ", randNum(3));
+
     t = readNumFromFile(&vet, file);
 
     printf("Original vector: ");

@@ -14,3 +14,7 @@ void selectionSort(int *v, int n);
 /* This function receives an array of integers of 
 size n and sorts it by performing the Bubble Sort Algorithm */
 void bubbleSort(int *v, int n);
+
+/* This function receives an array of integers of 
+size n and sorts it by performing the Merge Sort Algorithm */
+void mergeSort(int *v, int begin, int end);

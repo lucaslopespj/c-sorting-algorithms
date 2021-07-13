@@ -34,7 +34,7 @@ void selectionSort(int *v, int n) {
     }
 }
 
-/* Selection Sorte Algorithm */
+/* Bubble Sort Algorithm */
 void bubbleSort(int *v, int n) {
     int i, next, aux, fim = n;
 

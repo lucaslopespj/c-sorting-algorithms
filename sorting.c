@@ -14,7 +14,7 @@ void insertionSort(int *v, int n) {
     }
 }
 
-/* Selection Sorte Algorithm */
+/* Selection Sort Algorithm */
 void selectionSort(int *v, int n) {
     int i, j, less, replace;
 
@@ -34,6 +34,7 @@ void selectionSort(int *v, int n) {
     }
 }
 
+/* Selection Sorte Algorithm */
 void bubbleSort(int *v, int n) {
     int i, next, aux, fim = n;
 

@@ -34,6 +34,23 @@ void selectionSort(int *v, int n) {
     }
 }
 
+void bubbleSort(int *v, int n) {
+    int i, next, aux, fim = n;
+
+    do {
+        next = 0;
+        for (i = 0; i < fim-1; i++) {
+            if (v[i] > v[i+1]) {
+                aux = v[i];
+                v[i] = v[i+1];
+                v[i+1] = aux;
+                next = i;
+            }
+        }
+        fim--;
+    } while (next != 0);
+}
+
 int main() {
     int v[10] = {5, 3, -1, 0, 4, 10, -35, 150, 2, 7};
     int i = 0, tam = 10;
@@ -43,11 +60,9 @@ int main() {
         printf("%d ", v[i]);
 
     printf("\nSorted vector: ");
-    insertionSort(v, 6);
-    selectionSort(v, 6);
-
-    for (i = 0; i < tam; i++)
-        printf("%d ", v[i]);
+    /*insertionSort(v, tam);
+    selectionSort(v, tam);*/
+    bubbleSort(v, tam);
 
     for (i = 0; i < tam; i++) {
         if (i < tam-1)

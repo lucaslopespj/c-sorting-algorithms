@@ -10,3 +10,7 @@ void insertionSort(int *v, int n);
 /* This function receives an array of integers of 
 size n and sorts it by performing the Selection Sort Algorithm */
 void selectionSort(int *v, int n);
+
+/* This function receives an array of integers of 
+size n and sorts it by performing the Bubble Sort Algorithm */
+void bubbleSort(int *v, int n);

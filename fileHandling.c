@@ -145,12 +145,12 @@ int main() {
     int t, i;
     const char *file = "input.txt";
 
-    for (i = 0; i < 5000; i++)
-        printf("%d, ", randNum(3));
+    for (i = 0; i < 5000000; i++)
+        printf("%d, ", randNum(5));
 
     t = readNumFromFile(&vet, file);
 
-    printf("Original vector: ");
+    printf("\nOriginal vector: ");
     for (i = 0; i < t; i++) {
         printf("%d ", vet[i]);
     }

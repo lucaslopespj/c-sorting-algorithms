@@ -101,6 +101,46 @@ void mergeSort(int *v, int begin, int end) {
     }
 }
 
+/* Partition function is used in the Quick Sort Algorithm */
+int partition(int *v, int begin, int end) {
+    int left, right, pivot, aux;
+    
+    left = begin;
+    right = end;
+    pivot = v[begin];
+
+    while (left < right) {
+        while (v[left] <= pivot)
+            left++;
+        
+        while (v[right] > pivot)
+            right--;
+        
+        if (left < right) {
+            aux = v[left];
+            v[left] = v[right];
+            v[right] = aux;
+        }
+    }
+    
+    v[begin] = v[right];
+    v[right] = pivot;
+    
+    return right;
+}
+
+/* Quick Sort Algorithm itself */
+void quickSort(int *v, int begin, int end) {
+    int pivot;
+
+    if (end > begin) {
+        pivot = partition(v, begin, end);
+        quickSort(v, begin, pivot-1);
+        quickSort(v, pivot+1, end);
+    }
+}
+
+
 
 int main() {
     int v[10] = {5, 3, -1, 0, 4, 10, -35, 150, 2, 7};
@@ -113,9 +153,9 @@ int main() {
     printf("\nSorted vector: ");
     /*insertionSort(v, tam);
     selectionSort(v, tam);
-    bubbleSort(v, tam);*/
-
-    mergeSort(v, 0, 9);
+    bubbleSort(v, tam);
+    mergeSort(v, 0, 9);*/
+    quickSort(v, 0, 9);
 
     for (i = 0; i < tam; i++) {
         if (i < tam-1)

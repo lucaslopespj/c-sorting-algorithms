@@ -143,26 +143,54 @@ void quickSort(int *v, int begin, int end) {
 
 
 int main() {
-    int v[10] = {5, 3, -1, 0, 4, 10, -35, 150, 2, 7};
-    int i = 0, tam = 10;
+    /*int v[10] = {5, 3, -1, 0, 4, 10, -35, 150, 2, 7};
+    int tam = 10;*/
+    int i = 0;
+    int **v = malloc(sizeof(int *));
+    int tam = 0;
+    int vet[10];
+    int *t = NULL;
+    const char *output = "output.txt";
 
-    printf("Original vector: ");
+    *v = malloc(sizeof(int));
+
+    tam = readNumFromFile(&t, "input.txt");
+
+    /*printf("Original vector: ");
     for (i = 0; i < tam; i++)
-        printf("%d ", v[i]);
+        printf("%d ", (*v)[i]);
 
-    printf("\nSorted vector: ");
+    printf("\nSorted vector: ");*/
     /*insertionSort(v, tam);
-    selectionSort(v, tam);
-    bubbleSort(v, tam);
-    mergeSort(v, 0, 9);*/
-    quickSort(v, 0, 9);
+    selectionSort(v, tam);*/
+    /*bubbleSort(v, tam);*/
+    /*mergeSort(*v, 0, tam-1);*/
+    quickSort(t, 0, tam-1);
 
-    for (i = 0; i < tam; i++) {
+    /*for (i = 0; i < tam; i++) {
         if (i < tam-1)
-            printf("%d, ", v[i]);
+            printf("%d, ", (*v)[i]);
         else
-            printf("%d\n", v[i]);
+            printf("%d\n", (*v)[i]);
     }       
 
+    for (i = 0; i < tam; i++)
+        vet[i] = (*v)[i];*/
+
+    /*for (i = 0; i < tam; i++)
+        printf("%d, ", vet[i]);
+    printf("\n"); */
+    
+    writeOnFile(t, tam, output);
+
+    free(*v);
+    free(v);
+    free(t);
+    t = NULL;
+    *v = NULL;
+    v = NULL;
+
+
+    
     return 0;
 }

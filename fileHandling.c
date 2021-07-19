@@ -5,7 +5,12 @@
 
 
 int randNum(int digits) {
-    struct timespec ts;
+    /*struct timespec ts;*/
+
+    struct timespec {
+        time_t   tv_sec;        /* seconds */
+        long     tv_nsec;       /* nanoseconds */
+    } ts;
 
     timespec_get(&ts, 1);
     srand(ts.tv_nsec);
@@ -35,8 +40,11 @@ int readNumFromFile(int **v, const char *fileName) {
     int i = 0, t = 0, neg = 0, num = 0;
     char ch = 0;
     FILE *fs = NULL;
+    int *more = NULL;
 
     fs = fopen(fileName, "r");
+
+    *v = (int *) malloc(sizeof(int));
 
     if (fs == NULL) {
         printf("Error on open the file\n");
@@ -57,7 +65,7 @@ int readNumFromFile(int **v, const char *fileName) {
                     neg = 0;
                 }
                 t++;
-                *v = realloc(*v, t * sizeof(int));    
+                *v = realloc(*v, t * sizeof(*v));   
                 (*v)[i++] = num;
                 num = 0;
                 break;
@@ -80,112 +88,25 @@ int readNumFromFile(int **v, const char *fileName) {
     return ++t;
 }
 
-int main() {
-    /*int v[6] = {5, 3, -1, 0, 4, 10};
-    int tam = 15;
-    int v[15];
-    int num = 0;
-    int t = 0;
-    int i = 0;
-    int neg = 0;
-    int digits = 1;
-    char ch = 0;
-    FILE *fs = NULL;
-    int *vet;
+void writeOnFile(int *v, int n, const char *fileName) {
+    int i;
+    FILE *fs;
 
-    fs = fopen("input.txt", "r");
+    fs = fopen(fileName, "w");
 
     if (fs == NULL) {
         printf("Error on open the file\n");
-        return -1;
+        return;
     }
 
-    vet = malloc(sizeof(int));
+    for (i = 0; i < n; i++) {
+        fprintf(fs, "%d", v[i]);
 
-    while (1) {
-        ch = getc(fs);
-        t++;
-        vet = realloc(vet, t * sizeof(int));
-
-        switch (ch) {
-            case '-':
-                neg = 1;
-                break;
-            
-            case ',':
-                if (neg) {
-                    num = -num;
-                    neg = 0;
-                }
-                t++;
-                vet = realloc(vet, (t+1) * sizeof(int));
-                v[i++] = num;
-                vet[i] = num;
-                num = 0;
-                break;
-        
-            default:
-                if (ch != ' ' && ch != EOF) {
-                    num *= 10;
-                    num += atoi(&ch);
-                }
-                
-                else if (ch == EOF) {
-                    v[i] = /num;
-                    vet[i] = num;
-                }
+        if (i < n-1) {
+            fprintf(fs, ",");
+            fprintf(fs, " ");
         }
-
-        if (ch == EOF)
-            break;
     }
-
-    fclose(fs);*/
-    int *vet = NULL;
-    int t, i;
-    const char *file = "input.txt";
-
-    for (i = 0; i < 5000000; i++)
-        printf("%d, ", randNum(5));
-
-    t = readNumFromFile(&vet, file);
-
-    printf("\nOriginal vector: ");
-    for (i = 0; i < t; i++) {
-        printf("%d ", vet[i]);
-    }
-
-    /*
-    printf("\nSorted vector: ");
-    insertionSort(v, 6);
-    selectionSort(v, 6);
-
-    for (i = 0; i < tam; i++)
-        printf("%d ", v[i]);
-
-    fs = fopen("output.txt", "w");
     
-    if (fs == NULL) {
-        printf("Error on open the file\n");
-        return -1;
-    }*/
-
-    /*for (i = 0; i < 6; i++)
-        putc(v[i], fs);*/
-
-    /*for (i = 0; i < tam; i++) {
-        if (i < tam-1)
-            fprintf(fs, "%d, ", v[i]);
-        else
-            fprintf(fs, "%d", v[i]);
-    }    
-
-
-    fclose(fs);*/
-
-    free(vet);
-    vet = NULL;
-    printf("\n\nt = %d\n", t);
-
-    return 0;
+    fclose(fs);
 }

@@ -7,7 +7,6 @@
 of digits and returns a random integer number */
 int randNum(int digits);
 
-
 /* It receives the address of an integer array 'v' and a 'fileName' 
 string to the file's path that contains the numbers to be read.
 It reads all numbers in the file pointed by the 'fileName' string,

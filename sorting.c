@@ -148,11 +148,22 @@ int main() {
     int i = 0;
     int **v = malloc(sizeof(int *));
     int tam = 0;
-    int vet[10];
+    int vet[60000];
     int *t = NULL;
     const char *output = "output.txt";
-
+    /*int num = 10000000;*/
+    int num = 1000000;
     *v = malloc(sizeof(int));
+    t = malloc(num * sizeof (int));
+    
+    for (i = 0; i < num; i++) {
+        t[i] = randNum(7);
+    }
+
+    writeOnFile(t, num, "input.txt");
+
+    free(t);
+    t = NULL;
 
     tam = readNumFromFile(&t, "input.txt");
 
@@ -161,11 +172,11 @@ int main() {
         printf("%d ", (*v)[i]);
 
     printf("\nSorted vector: ");*/
-    /*insertionSort(v, tam);
-    selectionSort(v, tam);*/
+    insertionSort(t, tam);
+    /*selectionSort(v, tam);*/
     /*bubbleSort(v, tam);*/
-    /*mergeSort(*v, 0, tam-1);*/
-    quickSort(t, 0, tam-1);
+    /*mergeSort(t, 0, tam-1);*/
+    /*quickSort(t, 0, tam-1);*/
 
     /*for (i = 0; i < tam; i++) {
         if (i < tam-1)
@@ -190,7 +201,5 @@ int main() {
     *v = NULL;
     v = NULL;
 
-
-    
     return 0;
 }

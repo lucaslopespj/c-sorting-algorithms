@@ -5,11 +5,9 @@
 
 
 int randNum(int digits) {
-    /*struct timespec ts;*/
-
     struct timespec {
-        time_t   tv_sec;        /* seconds */
-        long     tv_nsec;       /* nanoseconds */
+        time_t   tv_sec;        
+        long     tv_nsec;       
     } ts;
 
     timespec_get(&ts, 1);
@@ -29,7 +27,13 @@ int randNum(int digits) {
             return rand() % 9999;
         
         case 5:
-            return rand() % 99999;        
+            return rand() % 99999;   
+
+        case 6:
+            return rand() % 999999;
+
+        case 7: 
+            return rand() % 99999999;         
         
         default:
             return rand() % 100;

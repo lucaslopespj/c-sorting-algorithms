@@ -3,8 +3,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-/* It receives an integer 'digits' from 1 to 5 which means the number 
-of digits and returns a random integer number */
+/* It receives an integer 'digits' from 1 to 7 which means the number 
+of digits and returns a random integer number. */
 int randNum(int digits);
 
 /* It receives the address of an integer array 'v' and a 'fileName' 
@@ -17,7 +17,7 @@ int readNumFromFile(int **v, const char *fileName);
 /* It receives an integer array 'v', the array's size 'n' and also
 a string 'fileName' which means the name of the output file, for
 example it could be "output.txt".
-The function writes all the numbers in 'v' in the 'fileName' file.
+The function writes all the numbers of 'v' in the 'fileName' file.
 If the file does not exist it will be creates. If already exists it
 will be completely rewrited (previous content is erased).*/
 void writeOnFile(int *v, int n, const char *fileName);

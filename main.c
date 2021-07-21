@@ -10,11 +10,11 @@ int main() {
     int *v = NULL;
     const char *output = "output.txt";
     const char *input = "input.txt";
-    int num = 100000;
+    int num = 1000000;
     double t_insertion, t_selection, t_bubble, t_merge, t_quick;
     clock_t before, after;
 
-    /* Alocates memory to a quantity of "num" numbers */
+    /* Allocates memory to a quantity of "num" numbers */
     v = malloc(num * sizeof (int));
     
     /* Get all the random numbers */
@@ -36,12 +36,20 @@ int main() {
     after = clock();
     t_insertion = (double) (after - before) / CLOCKS_PER_SEC;
 
+    /* Free all memory alocated to v */
+    free(v);
+    v = NULL;
+
     /* Selection Sort Computing Time */
     tam = readNumFromFile(&v, input);
     before = clock();
     selectionSort(v, tam);
     after = clock();
     t_selection = (double) (after - before) / CLOCKS_PER_SEC;
+
+    /* Free all memory alocated to v */
+    free(v);
+    v = NULL;
 
     /* Bubble Sort Computing Time */
     tam = readNumFromFile(&v, input);
@@ -50,12 +58,20 @@ int main() {
     after = clock();
     t_bubble = (double) (after - before) / CLOCKS_PER_SEC;
 
+    /* Free all memory alocated to v */
+    free(v);
+    v = NULL;
+
     /* Merge Sort Computing Time */
     tam = readNumFromFile(&v, input);
     before = clock();
     mergeSort(v, 0, tam-1);
     after = clock();
     t_merge = (double) (after - before) / CLOCKS_PER_SEC;
+
+    /* Free all memory alocated to v */
+    free(v);
+    v = NULL;
 
     /* Quick Sort Computing Time */
     tam = readNumFromFile(&v, input);

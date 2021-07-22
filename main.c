@@ -1,18 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <time.h>
 #include "fileHandling.h"
 #include "sorting.h"
-#include <time.h>
+#include "dateData.h"
 
 int main() {
     int i, size = 0;
     int *v = NULL;
     const char *output = "output.txt";
     const char *input = "input.txt";
-    int v_size = 100000;
+    int v_size = 1000000;
     double t_insertion, t_selection, t_bubble, t_merge, t_quick;
     clock_t before, after;
+    df *d_insertion, *d_selection, *d_bubble, *d_merge, *d_quick;
+
 
     /* Allocates memory to a quantity of "v_size" numbers */
     v = malloc(v_size * sizeof (int));
@@ -35,6 +38,7 @@ int main() {
     insertionSort(v, size);
     after = clock();
     t_insertion = (double) (after - before) / CLOCKS_PER_SEC;
+    d_insertion = dateInit(t_insertion);
 
     /* Free all memory allocated to v */
     free(v);
@@ -46,6 +50,7 @@ int main() {
     selectionSort(v, size);
     after = clock();
     t_selection = (double) (after - before) / CLOCKS_PER_SEC;
+    d_selection = dateInit(t_selection);
 
     /* Free all memory allocated to v */
     free(v);
@@ -57,6 +62,7 @@ int main() {
     bubbleSort(v, size);
     after = clock();
     t_bubble = (double) (after - before) / CLOCKS_PER_SEC;
+    d_bubble = dateInit(t_bubble);
 
     /* Free all memory allocated to v */
     free(v);
@@ -68,6 +74,7 @@ int main() {
     mergeSort(v, 0, size-1);
     after = clock();
     t_merge = (double) (after - before) / CLOCKS_PER_SEC;
+    d_merge = dateInit(t_merge);
 
     /* Free all memory allocated to v */
     free(v);
@@ -79,6 +86,9 @@ int main() {
     quickSort(v, 0, size-1);
     after = clock();
     t_quick = (double) (after - before) / CLOCKS_PER_SEC;
+    d_quick = dateInit(t_quick);
+
+    
 
     /* Writes all sorted numbers in the "output.txt" file*/
     writeOnFile(v, size, output);
@@ -92,13 +102,29 @@ int main() {
     printf("         You have sorted %d random numbers.\n", v_size);
     printf("         The 'input.txt' file contains all random numbers.\n");
     printf("         The 'output.txt' file contains all sorted numbers.\n");
-    printf("         Time of each algorithm (seconds):\n");
-    printf("             Insertion Sort: %f s\n", t_insertion);
-    printf("             Selection Sort: %f s\n", t_selection);
-    printf("             Bubble Sort: %f s\n", t_bubble);
-    printf("             Merge Sort: %f s\n", t_merge);
-    printf("             Quick Sort: %f s\n\n", t_quick);
+    printf("         Time of each algorithm:\n");
+    
+    printf("             Insertion Sort:");
+    printTime(d_insertion);
+    
+    printf("             Selection Sort:");
+    printTime(d_selection);
+
+    printf("             Bubble Sort:");
+    printTime(d_bubble);
+
+    printf("             Merge Sort:");
+    printTime(d_merge);
+    printf("             Quick Sort:");
+    printTime(d_quick);
+
     printf("+-----------------------------------------------------------------+\n\n");
+
+    dateKill(d_insertion);
+    dateKill(d_selection);
+    dateKill(d_bubble);
+    dateKill(d_merge);
+    dateKill(d_quick);
 
     return 0;
 }

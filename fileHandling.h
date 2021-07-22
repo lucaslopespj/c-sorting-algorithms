@@ -21,4 +21,3 @@ The function writes all the numbers of 'v' in the 'fileName' file.
 If the file does not exist it will be creates. If already exists it
 will be completely rewrited (previous content is erased).*/
 void writeOnFile(int *v, int n, const char *fileName);
-

@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "fileHandling.h"
+/*#include "fileHandling.h"*/
 
 /* This function receives an array of integers of 
 size n and sorts it by performing the Insertion Sort Algorithm */

@@ -110,10 +110,10 @@ int partition(int *v, int begin, int end) {
     pivot = v[begin];
 
     while (left < right) {
-        while (v[left] <= pivot)
+        while (left < end && v[left] <= pivot)
             left++;
         
-        while (v[right] > pivot)
+        while (right > begin && v[right] > pivot)
             right--;
         
         if (left < right) {

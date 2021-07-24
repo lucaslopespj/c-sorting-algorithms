@@ -10,7 +10,13 @@ int randNum(int digits);
 /* It receives the address of an integer array 'v' and a 'fileName' 
 string to the file's path that contains the numbers to be read.
 It reads all numbers in the file pointed by the 'fileName' string,
-puts them all in 'v' and returns the new size of the array 'v'. */
+puts them all in 'v' and returns the new size of the array 'v'. 
+
+Obs: numbers can be:
+    i) space separated (single space or various) => {1 2  3    4 5}
+    ii) single comma separated  => {1,2,3,4,5}
+    iii) single comma plus space (single or various) separated => {1, 2, 3,   4,5,   6}
+*/
 int readNumFromFile(int **v, const char *fileName);
 
 

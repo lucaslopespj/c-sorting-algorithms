@@ -11,10 +11,10 @@ int main() {
     int *v = NULL;
     const char *output = "output.txt";
     const char *input = "input.txt";
-    int v_size = 1000000;
-    double t_insertion, t_selection, t_bubble, t_merge, t_quick;
+    int v_size = 500000;
+    double t_insertion, t_selection, t_bubble, t_merge, t_quick, t_heap;
     clock_t before, after;
-    df *d_insertion, *d_selection, *d_bubble, *d_merge, *d_quick;
+    df *d_insertion, *d_selection, *d_bubble, *d_merge, *d_quick, *d_heap;
 
 
     /* Allocates memory to a quantity of "v_size" numbers */
@@ -88,6 +88,13 @@ int main() {
     t_quick = (double) (after - before) / CLOCKS_PER_SEC;
     d_quick = dateInit(t_quick);
 
+    /* Heap Sort Computing Time */
+    size = readNumFromFile(&v, input);
+    before = clock();
+    heapSort(v, size);
+    after = clock();
+    t_heap = (double) (after - before) / CLOCKS_PER_SEC;
+    d_heap = dateInit(t_heap);
     
 
     /* Writes all sorted numbers in the "output.txt" file*/
@@ -116,7 +123,9 @@ int main() {
     printf("             Merge Sort:");
     printTime(d_merge);
     printf("             Quick Sort:");
-    printTime(d_quick);
+    printTime(d_quick);    
+    printf("             Heap Sort:");
+    printTime(d_heap);
 
     printf("+-----------------------------------------------------------------+\n\n");
 
@@ -125,6 +134,7 @@ int main() {
     dateKill(d_bubble);
     dateKill(d_merge);
     dateKill(d_quick);
+    dateKill(d_heap);
 
     return 0;
 }

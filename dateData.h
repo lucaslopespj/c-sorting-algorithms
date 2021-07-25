@@ -4,11 +4,9 @@
 /* Defines a df abstract data type (ADT) */
 typedef struct dateForm df;
 
-/* It receives a double 'seconds' that represents
-an amout of time and returns a df ADT pointer.
-In the backgrounds it partitionalizes theses seconds
-into days, hours, minutes, seconds, miliseconds and microseconds
- */
+/* It receives a double 'seconds' that represents an amount of time 
+and returns a df ADT pointer. In the backgrounds it partitionalizes 
+theses seconds into days, hours, minutes, seconds, miliseconds and microseconds */
 df *dateInit(double seconds);
 
 /* It receives a df pointer 'date' and

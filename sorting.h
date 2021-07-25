@@ -25,3 +25,7 @@ where begin and end are variables that represents
 the beginning of the array and the end variable its final
 and sorts the array by performing the Quick Sort Algorithm */
 void quickSort(int *v, int begin, int end);
+
+/* This function receives an array of integers of 
+size n and sorts it by performing the Heap Sort Algorithm */
+void heapSort(int *v, int n);

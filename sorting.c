@@ -139,3 +139,38 @@ void quickSort(int *v, int begin, int end) {
         quickSort(v, pivot+1, end);
     }
 }
+
+/* Heap Sort Algorithm */
+void heapSort(int *v, int n) {
+   int i = n / 2, father, son, t;
+   while(1) {
+      if (i > 0) {
+          i--;
+          t = v[i];
+      } 
+      else {
+          n--;
+          if (n <= 0) return;
+          t = v[n];
+          v[n] = v[0];
+      }
+
+      father = i;
+      son = i * 2 + 1;
+      
+      while (son < n) {
+          if ((son + 1 < n)  &&  (v[son + 1] > v[son]))
+              son++;
+
+          if (v[son] > t) {
+             v[father] = v[son];
+             father = son;
+             son = father * 2 + 1;
+          } 
+          else {
+             break;
+          }
+      }
+      v[father] = t;
+   }
+}

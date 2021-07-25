@@ -27,6 +27,8 @@ $ ./program
 Basically it gets a quantity of **v_size** random numbers, put all them in a **input.txt** file. After it the program runs all _sorting algorithms_ getting the numbers from the input file and computes the time of each one.
 After all algorithms had been executed the program puts all the sorted numbers in the **output.txt** file and print the statistics on the screen.
 
+For example, for 500.000 numbers it will print something like this:
+
     +-------------------------- STATISTICS ---------------------------+
 
          You have sorted 500000 random numbers.

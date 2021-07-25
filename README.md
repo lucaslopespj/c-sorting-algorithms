@@ -6,7 +6,7 @@ It contains a library that implements the most important sorting algorithms in C
 ## About the files
 There are 7 files: main.c, sorting.h, sorting.c, fileHandling.h, fileHandling.c, dateData.h, dateData.c
 
-All the **.h** fiels (interface files) contains an explanation of how to use all functions. The **main.c** file it's the program sample that uses all the functions in the **.h** files. All the others **.c** files have the functions' implementations.
+All the **.h** files (interface files) contains an explanation of how to use all functions. The **main.c** file is the program sample that uses all the functions in the **.h** files. All the others **.c** files have the functions' implementations.
 
 ## Using the sample
 You first must to compile the files in order to use them. You'll need a C Compiler program to do it. For example, I'm using the GCC.

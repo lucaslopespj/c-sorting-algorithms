@@ -50,7 +50,7 @@ Also you can set the max quantity of numbers' digits.
 ```c
 int v_size = 1000; /* Set the quantity of numbers you want to sort*/
 
-number_of_digits = 5; /* Quantity of digits [1, 7] */
+int number_of_digits = 5; /* Quantity of digits [1, 7] */
 
 /* num variable will contain ONE random number with 'number_of_digits' digits*/
 int num = randNum(number_of_digits);

@@ -43,7 +43,7 @@ For example, for 500.000 numbers it will print something like this:
              Heap Sort:  61 ms  109 µs
     +-----------------------------------------------------------------+
 
-Time is divided into: _days, hours, min (minutes), ms (miliseconds) and µs (microseconds)._
+Time is divided into: _days, hours, min (minutes), s (seconds), ms (miliseconds) and µs (microseconds)._
 
 You can also use the functions in the **.h** files to write other programs.
 

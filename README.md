@@ -23,7 +23,7 @@ After it you can run the program. In a GNU/Linux terminal you can do:
 $ ./program
 ```
 
-## What does the main.c file?
+## What does main.c file do?
 Basically it gets a quantity of **v_size** random numbers, put all them in a **input.txt** file. After it the program runs all _sorting algorithms_ getting the numbers from the input file and computes the time of each one.
 After all algorithms had been executed the program puts all the sorted numbers in the **output.txt** file and print the statistics on the screen.
 

@@ -45,9 +45,11 @@ For example, for 500.000 numbers it will print something like this:
 
 Time is divided into: _days, hours, min (minutes), s (seconds), ms (miliseconds) and µs (microseconds)._
 
-You can also use the functions in the **.h** files to write other programs.
+> Obs: time to sort the numbers can vary from a processor to another one.
 
 #### Tips:
+You can also use the functions in the **.h** files to write other programs.
+
 You can modify the _v_size_ variable to set the quantity of numbers you want.
 Also you can set the max quantity of numbers' digits.
 

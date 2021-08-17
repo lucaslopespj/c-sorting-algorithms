@@ -18,9 +18,11 @@ To compile the file:
 $ gcc main.c sorting.c fileHandling.c dateData.c -o program -std=c99 -ansi -pedantic -O2 -lm 
 ```
 
-After it you can run the program. In a GNU/Linux terminal you can do:
+After it you can run the program on a GNU/Linux terminal. You also need to set the quantity of random numbers to be sorted and its max quantity of digits [1, 7].
+
+Next line shows you how to sort 500.000 random numbers with max of 7 digits each one:
 ```
-$ ./program
+$ ./program 500000 7
 ```
 
 ## What does main.c file do?
@@ -47,21 +49,8 @@ Time is divided into: _days, hours, min (minutes), s (seconds), ms (miliseconds)
 
 > Obs: time to sort the numbers can vary from a processor to another one.
 
-#### Tips:
-You can also use the functions in the **.h** files to write other programs.
-
-You can modify the _v_size_ variable to set the quantity of numbers you want.
-Also you can set the max quantity of numbers' digits.
-
-```c
-int v_size = 1000; /* Set the quantity of numbers you want to sort*/
-
-int number_of_digits = 5; /* Quantity of digits [1, 7] */
-
-/* num variable will contain ONE random number with 'number_of_digits' digits*/
-int num = randNum(number_of_digits);
-
-```
+#### Tip:
+You can also use the functions in the **.h** files to write other programs. Your own programs I mean! Don't forget to let me know if you try it!
 
 
 ## Sorting Algorithms

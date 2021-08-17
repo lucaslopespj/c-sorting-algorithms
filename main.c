@@ -6,23 +6,30 @@
 #include "sorting.h"
 #include "timeData.h"
 
-int main() {
+
+int main(int argc, char const *argv[]) {
     int i, size = 0;
     int *v = NULL;
     const char *output = "output.txt";
     const char *input = "input.txt";
-    int v_size = 100000;
+    int v_size = atoi(argv[1]);
+    int num_quantity = atoi(argv[2]);
+    
     double t_insertion, t_selection, t_bubble, t_merge, t_quick, t_heap;
     clock_t before, after;
     tf *d_insertion, *d_selection, *d_bubble, *d_merge, *d_quick, *d_heap;
 
+    if (v_size <= 0) {
+        printf("ERROR: You must choose a number greater than zero\n");
+        return 0;
+    }
 
     /* Allocates memory to a quantity of "v_size" numbers */
     v = malloc(v_size * sizeof (int));
     
     /* Get all the random numbers */
     for (i = 0; i < v_size; i++) {  
-        v[i] = randNum(7);
+        v[i] = randNum(num_quantity);
     }
 
     /* Writes all random numbers in the "input.txt" file */

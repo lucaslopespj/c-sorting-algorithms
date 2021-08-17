@@ -1,4 +1,3 @@
-/* Code in this library is to help read and write data in files */
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

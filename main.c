@@ -4,24 +4,24 @@
 #include <time.h>
 #include "fileHandling.h"
 #include "sorting.h"
-#include "dateData.h"
+#include "timeData.h"
 
 int main() {
     int i, size = 0;
     int *v = NULL;
     const char *output = "output.txt";
     const char *input = "input.txt";
-    int v_size = 500000;
+    int v_size = 100000;
     double t_insertion, t_selection, t_bubble, t_merge, t_quick, t_heap;
     clock_t before, after;
-    df *d_insertion, *d_selection, *d_bubble, *d_merge, *d_quick, *d_heap;
+    tf *d_insertion, *d_selection, *d_bubble, *d_merge, *d_quick, *d_heap;
 
 
     /* Allocates memory to a quantity of "v_size" numbers */
     v = malloc(v_size * sizeof (int));
     
     /* Get all the random numbers */
-    for (i = 0; i < v_size; i++) {
+    for (i = 0; i < v_size; i++) {  
         v[i] = randNum(7);
     }
 
@@ -38,7 +38,7 @@ int main() {
     insertionSort(v, size);
     after = clock();
     t_insertion = (double) (after - before) / CLOCKS_PER_SEC;
-    d_insertion = dateInit(t_insertion);
+    d_insertion = timeInit(t_insertion);
 
     /* Free all memory allocated to v */
     free(v);
@@ -50,7 +50,7 @@ int main() {
     selectionSort(v, size);
     after = clock();
     t_selection = (double) (after - before) / CLOCKS_PER_SEC;
-    d_selection = dateInit(t_selection);
+    d_selection = timeInit(t_selection);
 
     /* Free all memory allocated to v */
     free(v);
@@ -62,7 +62,7 @@ int main() {
     bubbleSort(v, size);
     after = clock();
     t_bubble = (double) (after - before) / CLOCKS_PER_SEC;
-    d_bubble = dateInit(t_bubble);
+    d_bubble = timeInit(t_bubble);
 
     /* Free all memory allocated to v */
     free(v);
@@ -74,7 +74,7 @@ int main() {
     mergeSort(v, 0, size-1);
     after = clock();
     t_merge = (double) (after - before) / CLOCKS_PER_SEC;
-    d_merge = dateInit(t_merge);
+    d_merge = timeInit(t_merge);
 
     /* Free all memory allocated to v */
     free(v);
@@ -86,7 +86,7 @@ int main() {
     quickSort(v, 0, size-1);
     after = clock();
     t_quick = (double) (after - before) / CLOCKS_PER_SEC;
-    d_quick = dateInit(t_quick);
+    d_quick = timeInit(t_quick);
 
     /* Heap Sort Computing Time */
     size = readNumFromFile(&v, input);
@@ -94,7 +94,7 @@ int main() {
     heapSort(v, size);
     after = clock();
     t_heap = (double) (after - before) / CLOCKS_PER_SEC;
-    d_heap = dateInit(t_heap);
+    d_heap = timeInit(t_heap);
     
 
     /* Writes all sorted numbers in the "output.txt" file*/
@@ -129,12 +129,12 @@ int main() {
 
     printf("+-----------------------------------------------------------------+\n\n");
 
-    dateKill(d_insertion);
-    dateKill(d_selection);
-    dateKill(d_bubble);
-    dateKill(d_merge);
-    dateKill(d_quick);
-    dateKill(d_heap);
+    timeKill(d_insertion);
+    timeKill(d_selection);
+    timeKill(d_bubble);
+    timeKill(d_merge);
+    timeKill(d_quick);
+    timeKill(d_heap);
 
     return 0;
 }

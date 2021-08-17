@@ -179,7 +179,6 @@ int main(int argc, char const *argv[]) {
     aux_time = (double) (after - before) / CLOCKS_PER_SEC;
     tf_output = timeInit(aux_time);
 
-
     /* Free all memory allocated to v */
     free(v);
     v = NULL;

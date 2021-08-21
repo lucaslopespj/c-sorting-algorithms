@@ -53,7 +53,7 @@ For example, for 500.000 numbers it will print something like this:
          Writing time of the 'output.txt' file:  45 ms  625 µs
          Mean reading time of the 'input.txt' file:  397 ms  840 µs
 
-+------------------------------------------------------------------------------------------------+
+    +------------------------------------------------------------------------------------------------+
 
 
 

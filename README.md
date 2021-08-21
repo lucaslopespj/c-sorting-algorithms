@@ -14,15 +14,16 @@ You first must to compile the files in order to use them. You'll need a C Compil
 You also need to compile with C99 (see below).
 
 To compile the file:
+
 ```bash
-$ gcc main.c sorting.c fileHandling.c dateData.c -o program -std=c99 -ansi -pedantic -O2 -lm 
+gcc main.c sorting.c fileHandling.c dateData.c -o program -std=c99 -ansi -pedantic -O2 -lm 
 ```
 
 After it you can run the program on a GNU/Linux terminal. You also need to set the quantity of random numbers to be sorted and its max quantity of digits [1, 7].
 
 Next line shows you how to sort 500.000 random numbers with max of 7 digits each one:
 ```
-$ ./program 500000 7
+./program 500000 7
 ```
 
 ## What does main.c file do?

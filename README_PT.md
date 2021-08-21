@@ -74,32 +74,32 @@ Você pode usar os seguintes algoritmos para ordenar seus números
 
 ---
 - **Insertion Sort** 
-    - Best case: n
-    - Average case: n²
-    - Worst case: n²
+    - Melhor caso: n
+    - Caso médio: n²
+    - Pior caso: n²
 ---
 - **Selection Sort**
-    - Best case: n²
-    - Average case: n²
-    - Worst case: n²
+    - Melhor caso: n²
+    - Caso médio: n²
+    - Pior caso: n²
 ---
 - **Bubble Sort**
-    - Best case: n
-    - Average case: n²
-    - Worst case: n²
+    - Melhor caso: n
+    - Caso médio: n²
+    - Pior caso: n²
 ---
 - **Merge Sort**
-    - Best case: n log n
-    - Average case: n log n
-    - Worst case: n log n
+    - Melhor caso: n log n
+    - Caso médio: n log n
+    - Pior caso: n log n
 ---
 - **Quick Sort**
-    - Best case: n log n
-    - Average case: n log n
-    - Worst case: n²
+    - Melhor caso: n log n
+    - Caso médio: n log n
+    - Pior caso: n²
 ---
 - **Heap Sort**
-    - Best case: n log n
-    - Average case: n log n
-    - Worst case: n log n
+    - Melhor caso: n log n
+    - Caso médio: n log n
+    - Pior caso: n log n
 ---

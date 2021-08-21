@@ -1,12 +1,13 @@
 # C Sorting Algorithms
+<a href="https://github.com/lucaslopespj/c-sorting-algorithms/blob/main/README_PT.md">Português</a>
 ## About this repository
 
 It contains a library that implements the most important sorting algorithms in C language. Set your numbers in an input file and get them sorted in an output file with measurements time statistics. 
 
 ## About the files
-There are 7 files: main.c, sorting.h, sorting.c, fileHandling.h, fileHandling.c, dateData.h, dateData.c
+There are 7 files: main.c, sorting.h, sorting.c, fileHandling.h, fileHandling.c, timeData.h, timeData.c
 
-All the **.h** files (interface files) contains an explanation of how to use all functions. The **main.c** file is the program sample that uses all the functions in the **.h** files. All the others **.c** files have the functions' implementations.
+All the **.h** files (interface files) contains an explanation of how to use all its functions. The **main.c** file is the program sample that uses all the functions in the **.h** files. All the others **.c** files have the functions' implementations.
 
 ## Using the sample
 You first must to compile the files in order to use them. You'll need a C Compiler program to do it. For example, I'm using the GCC.
@@ -21,7 +22,7 @@ gcc main.c sorting.c fileHandling.c dateData.c -o program -std=c99 -ansi -pedant
 
 After it you can run the program on a GNU/Linux terminal. You also need to set the quantity of random numbers to be sorted and its max quantity of digits [1, 7].
 
-Next line shows you how to sort 500.000 random numbers with max of 7 digits each one:
+Next line shows you how to sort 500,000 random numbers with max of 7 digits each one:
 ```
 ./program 500000 7
 ```
@@ -30,7 +31,7 @@ Next line shows you how to sort 500.000 random numbers with max of 7 digits each
 Basically it gets a quantity of **v_size** random numbers, put them all in a **input.txt** file. After it the program runs all _sorting algorithms_ getting the numbers from the input file and computes the time of each one.
 After all algorithms had been executed the program puts all the sorted numbers in the **output.txt** file and print the statistics on the screen.
 
-For example, for 500.000 numbers it will print something like this:
+For example, for 500,000 numbers it will print something like this:
 
     +----------------------------------------- STATISTICS ------------------------------------------+
 

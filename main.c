@@ -35,16 +35,16 @@ int main(int argc, char const *argv[]) {
     }
     after = clock();
     aux_time = (double) (after - before) / CLOCKS_PER_SEC;
-    before = after = 0;
     tf_random = timeInit(aux_time);
+    before = after = aux_time = 0;
 
     before = clock();
     /* Writes all random numbers in the "input.txt" file */
     writeOnFile(v, v_size, input);
     after = clock();
     aux_time = (double) (after - before) / CLOCKS_PER_SEC;
-    before = after = 0;
     tf_input = timeInit(aux_time);
+    before = after = aux_time = 0;
 
     /* Free all memory allocated to v */
     free(v);
@@ -65,9 +65,9 @@ int main(int argc, char const *argv[]) {
     insertionSort(v, size);
     after = clock();
     aux_time = (double) (after - before) / CLOCKS_PER_SEC;
-    before = after = 0;
     total_time += aux_time;
     tf_insertion = timeInit(aux_time);
+    before = after = aux_time = 0;
 
     /* Free all memory allocated to v */
     free(v);
@@ -85,9 +85,9 @@ int main(int argc, char const *argv[]) {
     selectionSort(v, size);
     after = clock();
     aux_time = (double) (after - before) / CLOCKS_PER_SEC;
-    before = after = 0;
     total_time += aux_time;
     tf_selection = timeInit(aux_time);
+    before = after = aux_time = 0;
 
     /* Free all memory allocated to v */
     free(v);
@@ -108,6 +108,7 @@ int main(int argc, char const *argv[]) {
     before = after = 0;
     total_time += aux_time;
     tf_bubble = timeInit(aux_time);
+    before = after = aux_time = 0;
 
     /* Free all memory allocated to v */
     free(v);
@@ -125,9 +126,9 @@ int main(int argc, char const *argv[]) {
     mergeSort(v, 0, size-1);
     after = clock();
     aux_time = (double) (after - before) / CLOCKS_PER_SEC;
-    before = after = 0;
     total_time += aux_time;
     tf_merge = timeInit(aux_time);
+    before = after = aux_time = 0;
 
     /* Free all memory allocated to v */
     free(v);
@@ -145,9 +146,13 @@ int main(int argc, char const *argv[]) {
     quickSort(v, 0, size-1);
     after = clock();
     aux_time = (double) (after - before) / CLOCKS_PER_SEC;
-    before = after = 0;
     total_time += aux_time;
     tf_quick = timeInit(aux_time);
+    before = after = aux_time = 0;
+
+    /* Free all memory allocated to v */
+    free(v);
+    v = NULL;
 
     /* Read file computation time */
     before = clock();
@@ -157,15 +162,14 @@ int main(int argc, char const *argv[]) {
     tf_reading = timeInit(reading_time);
     before = after = 0;
 
-
     /* Heap Sort Computing Time */
     before = clock();
     heapSort(v, size);
     after = clock();
     aux_time = (double) (after - before) / CLOCKS_PER_SEC;
-    before = after = 0;
     total_time += aux_time;
     tf_heap = timeInit(aux_time);
+    before = after = aux_time = 0;
     
     /* Gets the number of clocks after all sorting algoritms */
     totalAfter = clock();

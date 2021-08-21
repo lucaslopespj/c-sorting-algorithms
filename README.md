@@ -17,7 +17,7 @@ You also need to compile with C99 (see below).
 To compile the file:
 
 ```bash
-gcc main.c sorting.c fileHandling.c dateData.c -o program -std=c99 -ansi -pedantic -O2 -lm 
+gcc main.c sorting.c fileHandling.c timeData.c -o program -std=c99 -ansi -pedantic -O2 -lm 
 ```
 
 After it you can run the program on a GNU/Linux terminal. You also need to set the quantity of random numbers to be sorted and its max quantity of digits [1, 7].

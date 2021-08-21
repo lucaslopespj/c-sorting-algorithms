@@ -19,7 +19,7 @@ Você também precisa compilar com C99 (veja abaixo).
 Para compilar os arquivos:
 
 ```bash
-gcc main.c sorting.c fileHandling.c dateData.c -o program -std=c99 -ansi -pedantic -O2 -lm 
+gcc main.c sorting.c fileHandling.c timeData.c -o program -std=c99 -ansi -pedantic -O2 -lm 
 ```
 
 Depois disso você pode executar o programa num terminal GNU/Linux. Você também precisa dizer a quantidade de números aleatórios a serem ordenados e a sua quantidade máxima de dígitos [1, 7].

@@ -31,19 +31,31 @@ After all algorithms had been executed the program puts all the sorted numbers i
 
 For example, for 500.000 numbers it will print something like this:
 
-    +-------------------------- STATISTICS ---------------------------+
+    +----------------------------------------- STATISTICS ------------------------------------------+
 
          You have sorted 500000 random numbers.
          The 'input.txt' file contains all random numbers.
          The 'output.txt' file contains all sorted numbers.
+
          Time of each algorithm:
-             Insertion Sort:  26 s  300 ms  107 µs
-             Selection Sort:  4 min,  23 s  477 ms  708 µs
-             Bubble Sort:  5 min,  16 s  753 ms  312 µs
-             Merge Sort:  58 ms  878 µs
-             Quick Sort:  41 ms  166 µs
-             Heap Sort:  61 ms  109 µs
-    +-----------------------------------------------------------------+
+             Insertion Sort:  33 s  72 ms  195 µs
+             Selection Sort:  4 min,  35 s  974 ms  877 µs
+             Bubble Sort:  5 min,  52 s  500 ms  483 µs
+             Merge Sort:  74 ms  531 µs
+             Quick Sort:  51 ms  73 µs
+             Heap Sort:  69 ms  478 µs
+
+         Running time of all sorting algorithms :  11 min,  1 s  742 ms  640 µs
+
+
+         Time to get the random numbers:  611 ms  514 µs
+         Writing time of the 'input.txt' file:  35 ms  617 µs
+         Writing time of the 'output.txt' file:  45 ms  625 µs
+         Mean reading time of the 'input.txt' file:  397 ms  840 µs
+
++------------------------------------------------------------------------------------------------+
+
+
 
 Time is divided into: _days, hours, min (minutes), s (seconds), ms (miliseconds) and µs (microseconds)._
 

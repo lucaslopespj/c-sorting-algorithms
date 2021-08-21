@@ -29,7 +29,7 @@ A próxima linha mostra como ordenar 500.000 números aleatórios com no máximo
 ./program 500000 7
 ```
 
-## O que faz o arquivo main.?
+## O que faz o arquivo main.c?
 Basicamente ele pega uma quantidade de **v_size** números aleatórios, coloca todos eles em um arquivo **input.txt**. Depois disso o programa roda todos os _algoritmos de ordenação_ ordenando todos os números do arquivo de entrada e computando o tempo de cada um.
 Depois que todos os algoritmos terem sido executados, o programa coloca todos os números ordenados no arquivo **output.txt** e imprime estatísticas de tempo na tela.
 
